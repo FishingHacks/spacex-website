@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/data.js"></script>
+    <script src="/crew-info.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .navbar {
+        top: 0px;
+        position: sticky;
+        box-shadow: 4px 4px 4px 3px rgb(0 0 0 / 20%);
+        z-index: 9999;
+        padding-bottom: 20px;
+      }
+
+      .logout {
+        cursor: pointer;
+        z-index: 99999;
+      }
+
+      .dropdown-user {
+        background-color: #ffffff;
+        padding: 20px;
+        display: none;
+        border-radius: 10px;
+        border: 1px solid var(--acc);
+        transform: translateY(-10px);
+        z-index: 0;
+      }
+
+      .dropdown-user > * {
+        padding-top: 5px;
+      }
+
+      .dropdown-user.hover,
+      .dropdown-user:hover {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navlink:visited,
+      .navlink:active,
+      .navlink {
+        color: var(--textcol);
+        text-decoration: none;
+      }
+
+      .navlink:hover {
+        color: blue;
+      }
+
+      .navbar {
+        display: block;
+        padding: 15px 15px 15px 18px;
+        background-color: rgb(32, 34, 37);
+        margin: -10px 0px 0px 0px;
+        padding-right: 20px;
+        height: 20px;
+      }
+
+      .navbar > h1 {
+        margin: 0;
+        margin-left: 10px;
+        padding: 0;
+        display: inline;
+      }
+
+      .navbar > ul {
+        margin: 0;
+        padding: 0;
+        transform: translateY(-10px);
+        display: inline;
+      }
+
+      .navitem {
+        display: block;
+        float: left;
+        padding: 0 10px;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body onload="load();">
+    <nav class="navbar">
+      <ul>
+        <li class="navitem"><a href="/" class="navlink">Rockets</a></li>
+        <li class="navitem"><a href="/crew.html" class="navlink">Crew</a></li>
+        <li class="navitem">
+          <a href="/tesla.html" class="navlink">Space Tesla</a>
+        </li>
+        <li class="navitem">
+          <p id="days"></p>
+          <p id="hours"></p>
+          <p id="mins"></p>
+          <p id="secs"></p>
+          <h2 id="end"></h2>
+        </li>
+      </ul>
+    </nav>
+    <div class="rocket-infos-parent">
+      <div class="container rocket-infos"></div>
+    </div>
+  </body>
+</html>

@@ -43,10 +43,10 @@ async function load() {
         var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
             
         // Result is output to the specific element
-        document.getElementById("days").innerHTML = days + "d "
+        document.getElementById("days").innerHTML = "Next Launch: " + days + "d "
         document.getElementById("hours").innerHTML = hours + "h " 
         document.getElementById("mins").innerHTML = minutes + "m " 
-        document.getElementById("secs").innerHTML = seconds + "s " 
+        document.getElementById("secs").innerHTML = seconds + "s (" + upcoming[0].name + ")" 
             
         // Display the message when countdown is over
         if (timeleft < 0) {
@@ -55,7 +55,7 @@ async function load() {
             document.getElementById("hours").innerHTML = "" 
             document.getElementById("mins").innerHTML = ""
             document.getElementById("secs").innerHTML = ""
-            document.getElementById("end").innerHTML = "TIME UP!!";
+            document.getElementById("end").innerHTML = "Next Launch: Launched";
         }
         }, 1000);
 }

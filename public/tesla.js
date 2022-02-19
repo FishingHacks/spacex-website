@@ -36,7 +36,7 @@ async function load() {
         document.getElementById("days").innerHTML = "Next Launch: " + days + "d "
         document.getElementById("hours").innerHTML = hours + "h " 
         document.getElementById("mins").innerHTML = minutes + "m " 
-        document.getElementById("secs").innerHTML = seconds + "s " 
+        document.getElementById("secs").innerHTML = seconds + "s (" + upcoming[0].name + ")" 
             
         // Display the message when countdown is over
         if (timeleft < 0) {
